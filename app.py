@@ -46,10 +46,9 @@ def blueprint_config(app):
 # def rate_limit_config():
 #     limiter.limit("200 per day")
 
-if __name__ == '__main__':
-    app = create_app('ProductionConfig')
+app = create_app('ProductionConfig')
 
 
-    with app.app_context():
+with app.app_context():
         db.drop_all()
         db.create_all()
